@@ -1,0 +1,59 @@
+select employee_details_table.employee_first_name from employee_details_table join employee_salary_table on employee_details_table.employee_id = employee_salary_table.employee_id;
++---------------------+
+| employee_first_name |
++---------------------+
+| John                |
+| Deagnys             |
+| Cersia              |
+| Tyriont             |
++---------------------+
+4 rows in set (0.00 sec)
+
+mysql> select employee_details_table.employee_first_name from employee_details_table join employee_salary_table on employee_details_table.employee_id = employee_salary_table.employee_id where employee_salary_table.employee_salary>50k;
+ERROR 1054 (42S22): Unknown column '50k' in 'where clause'
+mysql> select employee_details_table.employee_first_name from employee_details_table join employee_salary_table on employee_details_table.employee_id = employee_salary_table.employee_id where employee_salary_table.employee_salary>'50k';
++---------------------+
+| employee_first_name |
++---------------------+
+| John                |
+| Tyriont             |
++---------------------+
+2 rows in set (0.00 sec)
+
+mysql> select ed.employee_first_name from employee_details_table ed join employee_salary_table es on ed.employee_id = es.employee_id where es.employee_salary>'50k';
++---------------------+
+| employee_first_name |
++---------------------+
+| John                |
+| Tyriont             |
++---------------------+
+2 rows in set (0.00 sec)
+
+mysql> select ed.employee_first_name from employee_details_table ed join employee_salary_table es on ed.employee_id = es.employee_id where es.employee_salary>'50t';
++---------------------+
+| employee_first_name |
++---------------------+
+| John                |
+| Tyriont             |
++---------------------+
+2 rows in set (0.00 sec)
+
+mysql> select ed.employee_first_name from employee_details_table ed join employee_salary_table es on ed.employee_id = es.employee_id where es.employee_salary>'50';
++---------------------+
+| employee_first_name |
++---------------------+
+| John                |
+| Tyriont             |
++---------------------+
+2 rows in set (0.00 sec)
+
+mysql> select em.employee_last_name from employee_details_table em where em.graduation_percentile>70;
++--------------------+
+| employee_last_name |
++--------------------+
+| Tagetgyan          |
+| lanister           |
++--------------------+
+2 rows in set (0.00 sec)
+
+mysql> select em.employee_code_name from employee_code_table em innerjoin employee_salary_table ed on em.employee_code = ed.employee_code  where em.graduation_percentile>70;

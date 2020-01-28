@@ -2,9 +2,10 @@
 $servername = "localhost";
 $username = "root";
 $password = "12345";
+$dbname = "mysqlassignment";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password);
+$conn = mysqli_connect($servername, $username, $password , $dbname);
 
 // Check connection
 if (!$conn) {
