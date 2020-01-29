@@ -1,0 +1,9 @@
+worked from 9:10am to 6:00pm inbetween took a break for 30mins due to saraswati puja.   work done for :https://training.innoraft-sites.com/sql.html. 
+learned about how to create sub queries in mysql.
+learned about group by ,having,order by clauses from w3school.
+successfully added the users input to the database tables.
+enabled button to trigger query based on the questions provided.
+completed sql queries given for mysql assignment 2.
+started styling of the web pages.
+started validation of data.
+mysql assignment 2 completed 80%. 
