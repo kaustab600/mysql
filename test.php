@@ -1,6 +1,3 @@
-<?php require('connection.php'); ?>
-
-<?php  mysqli_close($conn); ?>
 
 <!DOCTYPE html>
 <html>
@@ -15,15 +12,28 @@
 </head>
 <body> 
 		<form name="frm1" id="frm1" method="post" action="<?php  echo $_SERVER['PHP_SELF'];   ?>">
-		<input type="submit" name="query1" value="query1">
-		<input type="submit" name="query2" value="query2">
-		<input type="submit" name="query3" value="query3">
-		<input type="submit" name="query4" value="query4">
-		<input type="submit" name="query5" value="query5">
-		<input type="submit" name="query6" value="query6">
-		<input type="submit" name="query7" value="query7">
+		<input type="text" name="validate">
+		<input type="submit" name="submit" value="submit">
 	    </form>
-	    <?php include('test2.php')?>
+	   <?php
+
+	   	if(isset($_POST['submit']))
+	   	{
+	   		$val = $_POST['validate'];
+	   		$num = filter_var($val,FILTER_SANITIZE_NUMBER_INT);
+	   		//echo $num;
+	   		if($num<250)
+	   		{
+	   			echo $num;
+	   		}
+	   		else
+	   		{
+	   			echo "invalid";
+	   		}
+	   	}
+
+
+	   ?>
 	    
 
 </body>

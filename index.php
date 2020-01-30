@@ -13,6 +13,10 @@
 		 <input type="submit" name="submit" value="save">
 
 	</form>
+	<?php
+		include('invalidinputalert.php');
+
+	?>
 
 </body>
 </html>
