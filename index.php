@@ -8,7 +8,7 @@
 		 firstname:<input type="text" name="firstname">
 		 lastname:<input type="text" name="lastname">
 		 graduation percentage:<input type="text" name="grad">
-		 employee salary:<input type="text" name="salary">
+		 employee salary:<input type="number" name="salary">
 		 employee domain:<input type="text" name="domain">
 		 <input type="submit" name="submit" value="save">
 
