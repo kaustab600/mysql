@@ -2,9 +2,11 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
 <body>
-	<form name="frm1" method="post" action="gettingdata.php">
+	<h2>please enter an employee details </h2>
+	<form name="frm1" id="frm1" method="post" action="gettingdata.php">
 		 firstname:<input type="text" name="firstname">
 		 lastname:<input type="text" name="lastname">
 		 graduation percentage:<input type="text" name="grad">
