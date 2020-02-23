@@ -29,7 +29,7 @@
 	$res = mysqli_query($conn,$q1);
 	if(mysqli_num_rows($res)>0)
 	{
-		{ 
+		
 	?>
 	
 	<div id="tables">
@@ -59,14 +59,14 @@
 	</table>
 </div>
 	<?php
-		}
+		
 	}
 		echo"<br><br>";
 	$q1 = "select * from employee_code_table";
 	$res = mysqli_query($conn,$q1);
 	if(mysqli_num_rows($res)>0)
 	{
-		{ 
+		
 	?>
 	<div class="table1">
 	<table border="1px solid black">
@@ -93,7 +93,7 @@
 	</table>
 </div>
 	<?php
-		}
+		
 	}
 
 	echo"<br><br>";
@@ -101,7 +101,7 @@
 	$res = mysqli_query($conn,$q1);
 	if(mysqli_num_rows($res)>0)
 	{
-		{ 
+		
 	?>
 	<div class="table1">
 	<table border="1px solid black" id="table2">
@@ -128,7 +128,7 @@
 	</table>
 </div>
 	<?php
-		}
+		
 	}
 
 
