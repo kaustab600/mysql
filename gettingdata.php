@@ -23,7 +23,7 @@ if(isset($_POST['submit']))
 	}*/
 
 	$number = explode('%', $grad);
-	$percent = $number[0];
+	$percent = intval($number[0]);
 
 	$sal = $_POST['salary'];
 
@@ -39,7 +39,7 @@ if(isset($_POST['submit']))
 	$domain = $_POST['domain'];
 
 	//$qr1 = "select count(employee_id) as record from employee_details_table";
-		$qr1=	"select max(employee_id) as maxid from employee_details_table";
+	/*$qr1=	"select max(employee_id) as maxid from employee_details_table";
 	$rs = mysqli_query($conn,$qr1);
 
 	if($rs)
@@ -52,17 +52,24 @@ if(isset($_POST['submit']))
 	  $numM = $num + 1;
 	  $ide = 'RU'.$numM;
 
-	}
+	}*/
 
-	$qr2 = "insert into employee_details_table(employee_id,employee_first_name,employee_last_name,graduation_percentile) values('".$ide."','".$first."','".$last."','".$percent."')";
+	$qr2 = "insert into employee_details_table(employee_first_name,employee_last_name,graduation_percentile) values('".$first."','".$last."','".$percent."')";
 
 	$res = mysqli_query($conn,$qr2);
 
 
+	$qr00 = "select max(employee_id) as max from employee_details_table";
+	$rs = mysqli_query($conn,$qr00);
+	$row = mysqli_fetch_assoc($rs);
+	$newid = $row['max'];
+
+	$qr01 = "insert into employee_refer_id(employee_referid) values('RU".$newid."')";
+	$res = mysqli_query($conn,$qr01);
 
 	if(isset($firstlower))
 	{
-		$empid = 'su'.$firstlower;
+		$empid = 'su_'.$firstlower;
 	}
 
 	if(isset($domain))
@@ -90,7 +97,7 @@ if(isset($_POST['submit']))
 	$res1 = mysqli_query($conn,$qr3);
 
 
-	$qr4 = "insert into employee_salary_table(employee_id,employee_salary,employee_code) values('".$ide."','".$sal."','".$empid."')";
+	$qr4 = "insert into employee_salary_table(employee_salary,employee_code) values('".$sal."','".$empid."')";
 
 	$res1 = mysqli_query($conn,$qr4);
 
